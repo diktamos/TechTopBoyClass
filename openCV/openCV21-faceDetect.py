@@ -7,11 +7,11 @@ flip=0
 #for rasbery pi camera
 
 camSet='nvarguscamerasrc !  video/x-raw(memory:NVMM), width=3264, height=2464, format=NV12, framerate=21/1 ! nvvidconv flip-method='+str(flip)+' ! video/x-raw, width='+str(dispW)+', height='+str(dispH)+', format=BGRx ! videoconvert ! video/x-raw, format=BGR ! appsink'
-
-#camNumber = 0
 cam=cv2.VideoCapture(camSet)
 
+#camNumber = 1
 #cam = cv2.VideoCapture(camNumber)
+
 face_cascade = cv2.CascadeClassifier('/home/jetson/Desktop/pyPro/cascades/face.xml')
 while True:
     ret,frame = cam.read()

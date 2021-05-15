@@ -1,7 +1,10 @@
 import cv2
 import random
 import matplotlib.pyplot as plt
+import time
 print('cv2 version:', cv2.__version__)
+fps = 0
+timeStamp = time.time()
 
 class Ball():
     def __init__(self,xCenter=100,yCenter=100, radius=10, color = [255,0,255], lineWidth = -1, dt = 1):
@@ -38,7 +41,7 @@ dispH=512
 
 frameNumber = 0
 
-camNumber = 0
+camNumber = 1
 #cam=cv2.VideoCapture(camSet)
 cam=cv2.VideoCapture(camNumber)
 ball = Ball()
@@ -61,6 +64,11 @@ while True:
    
     
     frameNumber += 1
+    fps = 1/(time.time()-timeStamp)
+    print('FPS is :', round(fps,1))
+    timeStamp = time.time()
+
+
     if cv2.waitKey(5)==ord('q'):
         break
 plt.show()
