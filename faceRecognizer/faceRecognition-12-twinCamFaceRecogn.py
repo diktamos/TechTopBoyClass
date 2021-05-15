@@ -6,7 +6,7 @@ import face_recognition
 import pickle
 import sys
 import os
-
+#change for git
 with open('train.pkl','rb') as f:
     Names = pickle.load(f)
     Encodings = pickle.load(f)
@@ -71,9 +71,11 @@ while True:
             bottom = int(bottom/scaleFactor)
 
             cv2.rectangle(myFrame3,(left,top),(right,bottom),(0,0,255),2)     
-            cv2.putText(myFrame3,name,(left,top+6),font,0.75,(255,0,0),2)
+            cv2.putText(myFrame3,name,(left,top+10),font,0.75,(255,0,0),2)
 
             print(name)
+
+            
 
 
       
