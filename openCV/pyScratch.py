@@ -13,7 +13,7 @@ camSet='nvarguscamerasrc !  video/x-raw(memory:NVMM), \
         videoconvert ! video/x-raw, format=BGR ! \
         appsink'
 '''
-camNumber = 0
+camNumber = 1
 #cam=cv2.VideoCapture(camSet)
 cam = cv2.VideoCapture(camNumber)
 while True:

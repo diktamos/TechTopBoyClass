@@ -3,6 +3,8 @@ import cv2
 import os
 import pickle
 import time
+import cv2
+import numpy as np
 dispW = 640 #640
 dispH = 480 #512
 flip=0
@@ -30,7 +32,7 @@ while True:
     _,frame = cam.read()
     frameSmall = cv2.resize(frame,(0,0),fx=scaleFactor ,fy=scaleFactor )
     frameRGB = cv2.cvtColor(frameSmall,cv2.COLOR_BGR2RGB)
-    facePositions = face_recognition.face_locations(frameRGB)#,model='cnn')
+    facePositions = face_recognition.face_locations(frameRGB,model='cnn')
     print(facePositions)
     allEncodings = face_recognition.face_encodings(frameRGB,facePositions)
     for (top,right,bottom,left),face_encodings in zip(facePositions,allEncodings):
