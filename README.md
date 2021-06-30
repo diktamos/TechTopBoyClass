@@ -6,4 +6,5 @@
 
 image | description
 ----- | -------
-!(Image 1)()
+
+<img src="https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg" width="200/">
