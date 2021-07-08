@@ -12,7 +12,12 @@ image | description
 ## Jetson Inference
 Following the guide ["Hello AI WORLD" NVIDIA JETSON](https://github.com/dusty-nv/jetson-inference)
 ### Transfer Learning with PyTorch:
-***Classification/Recognition***
-- **Re-training ResNet for Classification/Recognition on a self collected dataset (Doll, Drago, Luchs, Background: train 100 images, validation 20 images, test 20 images)**
+- #### Classification/Recognition (ResNet-18)
+Re-training ResNet on a collected dataset (Doll, Drago, Luchs, Background: train 100 images, validation 20 images, test 20 images)
+<video width=320 height=240 controls poster="https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg">
+ <source src="" type="video/mp4"> 
 
-**Retraining of for castomer dataset format _Pascal VOC_  Doll, Drago, Luchs**
+- #### Object Detection (SSD-Mobilenet)
+Re-training SSD-Mobilenet on a collected detection dataset (Doll, Drago, Luchs: train 100 images, validation 20 images, test 20 images)
+
+
