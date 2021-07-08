@@ -2,13 +2,13 @@ import cv2
 import time
 
 print('cv2 version:', cv2.__version__)
-dispW = 640
-dispH = 512
+dispW = 1920
+dispH = 1080
 flip=2
 frameRate = 0
 
 class Rechteck():
-    def __init__(self,xCenter0=100,yCenter0=100, radius=50, color = [255,0,255], lineWidth = -1, dt = 1):
+    def __init__(self,xCenter0=100,yCenter0=100, radius=50, color = [255,0,255], lineWidth = -1, dt = 1,dispW=1920,dispH=1080):
         self.xCenter0 = xCenter0
         self.yCenter0 = yCenter0
         self.xCenter = xCenter0
@@ -18,8 +18,10 @@ class Rechteck():
         self.lineWidth = lineWidth
         self.dt = dt
         self.time = 0-dt
-        self.vx = 2 #random.randint(-1,1)
-        self.vy = 2 #random.randint(-1,1)
+        self.vx = 20 #random.randint(-1,1)
+        self.vy = 20 #random.randint(-1,1)
+        self.dispW = dispW
+        self.dispH = dispH
 
 
     def Move(self):
@@ -27,18 +29,18 @@ class Rechteck():
         self.xCenter = int(self.xCenter + self.dt * self.vx)
         self.yCenter = int(self.yCenter + self.dt * self.vy)
 
-        if self.xCenter+self.radius >= 640:
+        if self.xCenter+self.radius >= int(self.dispW):
             self.vx = -self.vx
-            self.xCenter = 640 -self.radius 
+            self.xCenter = int(self.dispW) -self.radius 
             
             
         if self.xCenter <= 0:
             self.vx = -self.vx
             self.xCenter = 0
            
-        if self.yCenter+self.radius >= 512:
+        if self.yCenter+self.radius >= int(self.dispH):
             self.vy = -self.vy
-            self.yCenter = 512 - self.radius 
+            self.yCenter = int(self.dispH) - self.radius 
            
             
         if self.yCenter <=0:
@@ -60,7 +62,7 @@ camSet='nvarguscamerasrc !  video/x-raw(memory:NVMM), \
         videoconvert ! video/x-raw, format=BGR ! \
         appsink'
 '''
-logoBox = Rechteck()
+logoBox = Rechteck(dispH=dispH,dispW=dispW)
 logo = cv2.imread('pl.jpg')
 logo = cv2.resize(logo, (50,50))
 cv2.imshow('logo',logo)
@@ -80,12 +82,13 @@ FG = cv2.bitwise_and(logo,logo,mask=FGMask)
 cv2.imshow('FG ', FG)
 cv2.moveWindow('FG ', 780,240)
 
-camNumber = 0
+camNumber = 1
 #cam=cv2.VideoCapture(camSet)
 cam = cv2.VideoCapture(camNumber)
 start = time.time()
 while True:
     ret,frame = cam.read()
+    print(frame.shape)
     
     roiBox = frame[logoBox.yCenter:logoBox.yCenter+logoBox.radius,\
             logoBox.xCenter:logoBox.xCenter+logoBox.radius].copy()
