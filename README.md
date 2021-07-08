@@ -18,6 +18,6 @@ Re-training ResNet on a collected dataset (Doll, Drago, Luchs, Background: train
 [Here is the video ](https://github.com/diktamos/TechTopBoyClass/blob/main/videos/modelDolls32Ep.avi)
 - #### Object Detection (SSD-Mobilenet)
 Re-training SSD-Mobilenet on a collected detection dataset (Doll, Drago, Luchs: train 100 images, validation 20 images, test 20 images)
-[Here is the video ](https://github.com/diktamos/TechTopBoyClass/blob/main/videos/modelDolls32Ep.avi)
+[Here is the video ](https://github.com/diktamos/TechTopBoyClass/blob/main/videos/myDetectDolls.avi)
 
 
