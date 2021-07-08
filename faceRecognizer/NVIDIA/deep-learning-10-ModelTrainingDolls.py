@@ -56,7 +56,7 @@ while True:
     #frame=jetson.utils.cudaToNumpy(frame,width,height,4)
     #frame = cv2.cvtColor(frame,cv2.COLOR_RGBA2BGR).astype(np.uint8)
     frame = cv2.resize(frame,(int(w/2),int(h/2)))
-    cv2.putText(frame,fpsFilterStr+item+'; confidence: '+f'confidence: {confidence*100:.2f} %',(0,30),font,1,(0,0,255),2)
+    cv2.putText(frame,fpsFilterStr+item+'; '+f'confidence: {confidence*100:.2f} %',(0,30),font,1,(0,0,255),2)
     cv2.imshow('recCam',frame)
     cv2.moveWindow('recCam',0,0)
     outVid.write(frame)
