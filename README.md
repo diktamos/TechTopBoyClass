@@ -14,9 +14,8 @@ Following the guide ["Hello AI WORLD" NVIDIA JETSON](https://github.com/dusty-nv
 ### Transfer Learning with PyTorch:
 - #### Classification/Recognition (ResNet-18)
 Re-training ResNet on a collected dataset (Doll, Drago, Luchs, Background: train 100 images, validation 20 images, test 20 images)
-<video width=320 height=240 controls poster="https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg">
- <source src="" type="video/mp4"> 
 
+[![Watch the video](https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg)](https://www.youtube.com/watch?v=aiRLejymIn8)
 - #### Object Detection (SSD-Mobilenet)
 Re-training SSD-Mobilenet on a collected detection dataset (Doll, Drago, Luchs: train 100 images, validation 20 images, test 20 images)
 
