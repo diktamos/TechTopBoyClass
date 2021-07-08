@@ -15,7 +15,7 @@ Following the guide ["Hello AI WORLD" NVIDIA JETSON](https://github.com/dusty-nv
 - #### Classification/Recognition (ResNet-18)
 Re-training ResNet on a collected dataset (Doll, Drago, Luchs, Background: train 100 images, validation 20 images, test 20 images)
 
-[![Watch the video](https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg)](https://www.youtube.com/watch?v=aiRLejymIn8)
+[![Watch the video](https://github.com/diktamos/TechTopBoyClass/blob/main/cv.jpg)](https://github.com/diktamos/TechTopBoyClass/blob/main/videos/modelDolls32Ep.avi)
 - #### Object Detection (SSD-Mobilenet)
 Re-training SSD-Mobilenet on a collected detection dataset (Doll, Drago, Luchs: train 100 images, validation 20 images, test 20 images)
 
